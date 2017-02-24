@@ -1,4 +1,4 @@
-# maxmind_geoip_fine
+# maxmind-geoip-fine
 ETL over maxmind geoip files
 
 The (awesome) guys in www.maxmind.com deliver a completely free dataset of ip geolocation. 
