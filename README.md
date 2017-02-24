@@ -13,11 +13,11 @@ and being the fact table merely
   the begin and the end of the range whose ASNumber is X and its geography Y.
   
 So, the guys in maxmind distribute several csv files, one per each denormalized-branch of the star, it is:
-#file1 (ASNumber dimension)
+file1 (ASNumber dimension)
 1.0.0.0 - 1.0.0.255 ASXXXXX
 1.0.1.0 - 1.0.1.255 ASYYYYY
 
-#file2 (geography dimension)
+file2 (geography dimension)
 1.0.0.0 - 1.0.1.255 Spain, Madrid
 
 This is nice, but what if you need all the ips of the ASXXXXX AND Spain?
