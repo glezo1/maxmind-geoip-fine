@@ -8,13 +8,13 @@ Yet, I kinda dislike the format they use to deliver the info.
 
 The system itself is a multi-dimensional star scheme, having per dimensions:
 
-  -AS Number
+   AS Number
   
-  -Geography (country, region,etc)
+   Geography (country, region,etc)
   
 and being the fact table merely 
 
-  the begin and the end of the range whose ASNumber is X and its geography Y.
+   the begin and the end of the range whose ASNumber is X and its geography Y.
   
   
 So, the guys in maxmind distribute several csv files, one per each denormalized-branch of the star, it is:
