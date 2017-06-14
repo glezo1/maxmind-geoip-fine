@@ -2,7 +2,7 @@
 DROP DATABASE IF EXISTS geoip;
 CREATE DATABASE geoip;
 USE geoip;
-CREATE TABLE IF NOT EXISTS tgip_000_process_log 
+CREATE TABLE IF NOT EXISTS TGIP_000_PROCESS_LOG 
 (
   deliveryDate varchar(10) DEFAULT NULL,
   type_of_entry varchar(100) DEFAULT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS tgip_000_process_log
   notes varchar(500) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS tgip_100_load_region 
+CREATE TABLE IF NOT EXISTS TGIP_100_LOAD_REGION 
 (
   countryISO varchar(100) DEFAULT NULL,
   id varchar(100) DEFAULT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS tgip_100_load_region
   KEY IGIP_100_ID_COUNTRYISO (id,countryISO)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS tgip_101_load_geoip_country_whois 
+CREATE TABLE IF NOT EXISTS TGIP_101_LOAD_GEOIP_COUNTRY_WHOIS 
 (
   ipStart varchar(15) DEFAULT NULL,
   ipEnd varchar(15) DEFAULT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS tgip_101_load_geoip_country_whois
   KEY IGIP_101_COUNTRYISO (countryISO)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS tgip_102_load_geoip_asnum 
+CREATE TABLE IF NOT EXISTS TGIP_102_LOAD_GEOIP_ASNUM 
 (
   ipIntStart int(10) unsigned DEFAULT NULL,
   ipIntEnd int(10) unsigned DEFAULT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS tgip_102_load_geoip_asnum
   KEY IGIP_102_IPINTSTART_IPINTEND (ipIntStart,ipIntEnd)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS tgip_103_load_geolite_city_blocks 
+CREATE TABLE IF NOT EXISTS TGIP_103_LOAD_GEOLITE_CITY_BLOCKS 
 (
   ipIntStart int(10) unsigned DEFAULT NULL,
   ipIntEnd int(10) unsigned DEFAULT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS tgip_103_load_geolite_city_blocks
   KEY IGIP_103_LOCID (locId)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS tgip_104_load_geolite_city_locations 
+CREATE TABLE IF NOT EXISTS TGIP_104_LOAD_GEOLITE_CITY_LOCATIONS 
 (
   locId varchar(10) NOT NULL,
   countryISO varchar(10) DEFAULT NULL,
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS tgip_104_load_geolite_city_locations
   PRIMARY KEY (locId)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS tgip_200_blocks_locations 
+CREATE TABLE IF NOT EXISTS TGIP_200_BLOCKS_LOCATIONS 
 (
   ipIntStart int(10) unsigned DEFAULT NULL,
   ipIntEnd int(10) unsigned DEFAULT NULL,
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS tgip_200_blocks_locations
   KEY IGIP_200_COUNTRYISO_REGIONID (countryISO,regionId)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS tgip_201_blocks_locations_regions 
+CREATE TABLE IF NOT EXISTS TGIP_201_BLOCKS_LOCATIONS_REGIONS 
 (
   ipIntStart int(10) unsigned DEFAULT NULL,
   ipIntEnd int(10) unsigned DEFAULT NULL,
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS tgip_201_blocks_locations_regions
   KEY IGIP_201_COUNTRYISO (countryISO)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS tgip_202_blocks_locations_regions_country 
+CREATE TABLE IF NOT EXISTS TGIP_202_BLOCKS_LOCATIONS_REGIONS_COUNTRY 
 (
   ipStart varchar(15) DEFAULT NULL,
   ipEnd varchar(15) DEFAULT NULL,
@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS tgip_202_blocks_locations_regions_country
   KEY IGIP_202_COUNTRYISO_REGION (countryISO,region)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS tgip_203_blocks_locations_regions_country_asnum_1 
+CREATE TABLE IF NOT EXISTS TGIP_203_BLOCKS_LOCATIONS_REGIONS_COUNTRY_ASNUM_1 
 (
   ipIntStart int(10) unsigned NOT NULL DEFAULT '0',
   ipIntEnd int(10) unsigned DEFAULT NULL,
@@ -159,7 +159,7 @@ CREATE TABLE IF NOT EXISTS tgip_203_blocks_locations_regions_country_asnum_1
   KEY IGIP_203_COUNTRYISO (countryISO)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS tgip_204_blocks_locations_regions_country_asnum_2 
+CREATE TABLE IF NOT EXISTS TGIP_204_BLOCKS_LOCATIONS_REGIONS_COUNTRY_ASNUM_2 
 (
   ipIntStart int(10) unsigned NOT NULL DEFAULT '0',
   ipIntEnd int(10) unsigned DEFAULT NULL,
@@ -193,7 +193,7 @@ CREATE TABLE IF NOT EXISTS tgip_204_blocks_locations_regions_country_asnum_2
   KEY IGIP_204_COUNTRYISO (countryISO)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS tgip_205_pre_orphans 
+CREATE TABLE IF NOT EXISTS TGIP_205_PRE_ORPHANS 
 (
   orphan_id int(11) NOT NULL AUTO_INCREMENT,
   ipIntStart int(10) unsigned DEFAULT NULL,
@@ -225,7 +225,7 @@ CREATE TABLE IF NOT EXISTS tgip_205_pre_orphans
   KEY IGIP_205_COUNTRYISO (countryISO)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 -- --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS tgip_206_pre_orphans_previous_step 
+CREATE TABLE IF NOT EXISTS TGIP_206_PRE_ORPHANS_PREVIOUS_STEP 
 (
   orphan_id int(11) NOT NULL AUTO_INCREMENT,
   ipIntStart int(10) unsigned DEFAULT NULL,
@@ -257,7 +257,7 @@ CREATE TABLE IF NOT EXISTS tgip_206_pre_orphans_previous_step
   KEY IGIP_206_COUNTRYISO (countryISO)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 -- --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS tgip_300_range_a_ranges_b 
+CREATE TABLE IF NOT EXISTS TGIP_300_RANGE_A_RANGES_B 
 (
   ipIntStartA int(10) unsigned DEFAULT NULL,
   ipIntEndA int(10) unsigned DEFAULT NULL,
@@ -270,13 +270,13 @@ CREATE TABLE IF NOT EXISTS tgip_300_range_a_ranges_b
   KEY IGIP_300_IPINTSTARTA_IPINTENDA (ipIntStartA,ipIntEndA)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS tgip_301_new_invalid_records 
+CREATE TABLE IF NOT EXISTS TGIP_301_NEW_INVALID_RECORDS 
 (
   ipIntStart int(10) unsigned NOT NULL,
   KEY IGIP_301_IPINTSTART (ipIntStart)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS tgip_400_last_board 
+CREATE TABLE IF NOT EXISTS TGIP_400_LAST_BOARD 
 (
   data_timestamp date NOT NULL,
   ip_range varchar(33) NOT NULL,
@@ -311,7 +311,7 @@ CREATE TABLE IF NOT EXISTS tgip_400_last_board
   KEY IGIP_400_ASNUMBER (ASNumber)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS tgip_401_historic_board 
+CREATE TABLE IF NOT EXISTS TGIP_401_HISTORIC_BOARD 
 (
   data_valid_from date NOT NULL,
   data_valid_to date DEFAULT NULL,
